@@ -1,4 +1,5 @@
 import { ChangeEvent, Dispatch, FC, SetStateAction, useState } from "react";
+import { Button } from '../Button'
 
 interface IForm {}
 
@@ -57,9 +58,7 @@ const Form: FC<IForm> = () => {
           <p className="form__notice --red">{error}</p>
         </div>
 
-        <button className="button --full-width" type="submit">
-          Login
-        </button>
+        <Button className="--full-width" type="submit" value="Login" />
       </form>
     </div>
   );
