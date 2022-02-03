@@ -1,5 +1,6 @@
 import { ChangeEvent, Dispatch, FC, SetStateAction, useState } from "react";
-import { Button } from '../Button'
+import { Field } from "../Field"
+import { Button } from "../Button"
 
 interface IForm {}
 
@@ -29,34 +30,31 @@ const Form: FC<IForm> = () => {
         method="post"
         onSubmit={onSubmit}
       >
-        <div className="form__group-fields">
-          <input
-            autoFocus
-            className="field --text --full-width"
-            id="login-email"
-            name="email"
-            onChange={onChangeField(setEmail)}
-            placeholder="Email"
-            required
-            type="email"
-            value={email}
-          />
-        </div>
+        <Field
+          autoFocus
+          className="form__group-fields"
+          error={error}
+          id="login-email"
+          name="email"
+          onChange={onChangeField(setEmail)}
+          placeholder="Email"
+          required
+          shouldShowErrorMsg={false}
+          type="email"
+          value={email}
+        />
 
-        <div className="form__group-fields">
-          <input
-            className="field --text --full-width"
-            id="login-password"
-            name="password"
-            onChange={onChangeField(setPassword)}
-            placeholder="Password"
-            required
-            type="password"
-            value={password}
-          />
-
-          <p className="form__notice --red">{error}</p>
-        </div>
+        <Field
+          className="form__group-fields"
+          error={error}
+          id="login-password"
+          name="password"
+          onChange={onChangeField(setPassword)}
+          placeholder="Password"
+          required
+          type="password"
+          value={password}
+        />
 
         <Button className="--full-width" type="submit" value="Login" />
       </form>
