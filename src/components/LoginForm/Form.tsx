@@ -9,6 +9,7 @@ const Form: FC<IForm> = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [isProcessing, setIsProcessing] = useState(false);
 
   const onChangeField =
     (setState: Dispatch<SetStateAction<string>>) =>
@@ -18,7 +19,18 @@ const Form: FC<IForm> = () => {
 
   const onSubmit = (e: ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setError('Please, enter correct email and password');
+    
+    setIsProcessing(true)
+    setTimeout(() => {
+      const isError = Math.random() < 0.5;
+
+      if (isError) {
+        setError("Please, enter correct email and password");
+      } else {
+        alert("You loged in. Redirect");
+      }
+      setIsProcessing(false);
+    }, 2000)
   }
 
   return (
@@ -57,7 +69,12 @@ const Form: FC<IForm> = () => {
           value={password}
         />
 
-        <Button className="--full-width" type="submit" value="Login" />
+        <Button
+          className="--full-width"
+          disabled={isProcessing}
+          type="submit"
+          value="Login"
+        />
       </form>
     </div>
   );
