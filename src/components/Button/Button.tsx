@@ -8,12 +8,14 @@ interface IButton {
 
 const Button: FC<IButton & ButtonHTMLAttributes<HTMLButtonElement>> = ({
   className = "",
-  onClick,
-  type = "button",
   value,
+  ...props
 }) => {
   return (
-    <button className={`button ${className}`} onClick={onClick} type={type}>
+    <button
+      className={`button ${className}`}
+      {...props}
+    >
       {value}
     </button>
   );
