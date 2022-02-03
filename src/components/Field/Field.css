@@ -1,0 +1,36 @@
+.field {
+  text-align: left;
+
+  --red: #d40101;
+}
+
+.field__element {
+  width: 100%;
+  padding: 0.5em 1.1em;
+  line-height: 1.4;
+
+  color: #333;
+  
+  background-color: #fff;
+  border: 1px solid #d5d5d5;
+
+  box-sizing: border-box;
+}
+
+.field__element:focus {
+  border-radius: 2px;
+}
+
+.field__element.--red {
+  border-color: var(--red);
+}
+
+.field__notice {
+  margin: 4px 0 0;
+
+  font-size: 12px;
+}
+
+.field__notice.--red {
+  color: var(--red);
+}

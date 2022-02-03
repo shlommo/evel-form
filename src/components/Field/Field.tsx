@@ -1,4 +1,5 @@
 import { FC, InputHTMLAttributes } from "react";
+import "./Field.css";
 
 interface IField {
   className?: string;

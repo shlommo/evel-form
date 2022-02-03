@@ -1,0 +1,22 @@
+.login {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px 12px 40px;
+
+  font-size: 14px;
+
+  box-sizing: border-box;
+}
+
+.login__title {
+  margin: 0 0 32px;
+
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.form__group-fields {
+  margin-bottom: 21px;
+}

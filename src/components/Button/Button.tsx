@@ -1,4 +1,5 @@
 import { ButtonHTMLAttributes, FC } from "react";
+import "./Button.css"
 
 interface IButton {
   className?: string;

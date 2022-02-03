@@ -1,6 +1,7 @@
 import { ChangeEvent, Dispatch, FC, SetStateAction, useState } from "react";
 import { Field } from "../Field"
 import { Button } from "../Button"
+import "./Form.css";
 
 interface IForm {}
 
@@ -22,7 +23,7 @@ const Form: FC<IForm> = () => {
 
   return (
     <div className="login">
-      <h1>Log in</h1>
+      <h1 className="login__title">Log in</h1>
       <form
         className="login__form form"
         action="/login"
